@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Highwire</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/amelia/bootstrap.min.css">
+
+        <style>
+
+
+		.balance-example {
+		    max-width:940px;
+		}
+
+
+		.balance-box {
+		    display:inline-block;
+		    background-color:hsla(52, 54%, 50%, 0.59);
+		    vertical-align:top;
+		}
+
+		.content div:nth-child(2n) {
+		    background-color:hsla(84, 54%, 50%, 0.59);
+		}
+
+		@media screen and (min-width:600px) {
+		    .balance-box {
+		        width:49%;
+		    }
+		}
+
+		@media screen and (min-width:1024px) {
+		    .balance-box {
+		        width:33%;
+		    }
+		}
+
+		@media screen and (min-width:1280px) {
+		    .balance-box {
+		        width:24%;
+		    }
+		}
+
+</style>
+
+
+</head>
+<body>
+
+	<div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="./" class="navbar-brand">Highwire</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+
+
+        </div>
+      </div>
+    </div>
+
+	<div role="main" class="container">
+<h1>Balancing columns with Highwire across breakpoints</h1>
+
+<p>Highwire is a jQuery plugin that balances the height of individual items of content in a row and works across breakpoints and browser resizes. The plugin will match all the items in a row to the height of the tallest item in the row. This can help fix visual problems with backgrounds and borders in individual row items. </p>
+
+<div class="content">
+    
+    <div class="balance-box box-1">
+        <p>Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus to throw Antwone into a glass motherfuckin' house, fuckin' up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, 'cause I'll kill the motherfucker, know what I'm sayin'?</p>
+    </div>
+
+    <div class="balance-box box-2">
+        <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p>
+    </div>
+
+    <div class="balance-box box-3">
+        <p>My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?</p>
+      
+    </div>
+
+    <div class="balance-box box-4">
+        <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.</p>
+    </div>
+
+    <div class="balance-box box-5">
+        <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.</p>
+    </div>
+
+    <div class="balance-box box-6">
+        <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.</p>
+      
+    </div>
+    
+</div>
+
+<p>To initialise highwire call it using the following: </p>
+
+<script src="https://gist.github.com/mooklateer/7138138.js"></script>
+
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script type="" src="https://rawgithub.com/mooklateer/highwire/master/highwire.js"></script>
+
+	<script>
+        $('.balance-box').highwire(
+            {
+                config: [
+                    { mq: 'screen and (min-width: 1px)', cols: 1 },
+                    { mq: 'screen and (min-width: 600px)', cols: 2 },
+                    { mq: 'screen and (min-width: 1024px)', cols: 3 },
+                    { mq: 'screen and (min-width: 1280px)', cols: 4 }
+                ]
+            }
+        );
+
+        // this script gives the boxes random background colors
+        $('.balance-box').each(function(){
+            $(this).css({'background-color': 'hsla(' + Math.floor((Math.random()*255)+1) + ', 54%, 50%, 0.59)'});
+        });
+	</script>
+
+</body>
+</html>
