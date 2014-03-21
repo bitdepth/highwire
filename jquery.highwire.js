@@ -51,6 +51,10 @@ var mediaCheck=function(a){var b,c,d,e,f,g=void 0!==window.matchMedia;if(g)c=fun
                 }, 100);
             });
 
+            $(window).on('orientationchange', function () {
+                this.balance(this.elements, this.options);
+            });
+
             // this means the els have been hidden in a tab or otherwise and resizing heights has been disable
             // when they become visible again we need to recalculate the height of the containers
 
